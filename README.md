@@ -1,8 +1,14 @@
 # Consumer Credit Application Scorecard
 
-A reproducible study of a consumer credit application scorecard using **Lending Club Data**. The study covers exploratory analysis, sample design, variable review, WoE binning, logistic regression, temporal validation and alternative feature-selection methods.
+## Project summary
 
-The primary model uses annual income, debt-to-income ratio, revolving utilisation, loan purpose and enquiries in the preceding six months. A common score is mapped to separate 36- and 60-month probabilities using calibrated intercepts. The target is a **recorded contract outcome** with Fully Paid coded Good and Charged Off or Default coded Bad.
+This project develops and evaluates an interpretable consumer credit application scorecard using **Lending Club Data**. Exploratory analysis covers **2,925,492 loans** originated between June 2007 and September 2020. Model estimation uses **86,624 individual standard-policy loans from 2010–2012**, followed by comparisons on later origination cohorts.
+
+The study connects data quality and outcome coverage with sample design, application-time variable review, weight-of-evidence binning and logistic regression. Fully Paid is coded Good, while Charged Off or Default is coded Bad. The primary scorecard uses annual income, debt-to-income ratio, revolving utilisation, loan purpose and recent credit enquiries. A common score maps to separate 36- and 60-month outcome probabilities through term-specific intercepts. Alternative specifications examine Elastic Net, business-based feature engineering and random-forest feature selection.
+
+On **84,175 labelled loans originated in January–March 2015**, the primary scorecard achieved **log loss of 0.466607 and AUC of 0.6449** after recalibration on 2014 outcomes. The broader pattern-based model reduced log loss by **0.70%**, using 42 encoded columns. Compact engineered alternatives supplied little additional predictive value. The original five-variable WoE model was retained for its direct point contributions and simpler audit trail. Results describe recorded contract outcomes among eligible originated loans. Calibration gaps and the reuse of later cohorts remain considerations for further validation.
+
+The repository includes the research paper, five executed notebooks, reproducible Python stage scripts, aggregate evidence and a scoring example based on fabricated applications.
 
 ## Main findings
 
@@ -106,9 +112,9 @@ Later model experiments used cohorts whose earlier WoE results were already know
 
 ## Package verification
 
-The standalone scoring command and three presentation notebooks were executed in the packaged layout. The core logistic, term-intercept, slope, 2014 validation, recalibration and final-scoring stages were rerun from the frozen local development samples with the original Lending Club Data extract supplied to the later-sample loader. Their published scoring results were reconciled with the established study. The complete upstream source preparation remains available through the stage runner.
+The standalone scoring command and five presentation notebooks were executed in the packaged layout. The core logistic, term-intercept, slope, 2014 validation, recalibration and final-scoring stages were rerun from the frozen local development samples with the original Lending Club Data extract supplied to the later-sample loader. Their published scoring results were reconciled with the established study. The complete upstream source preparation remains available through the stage runner.
 
-The Word manuscript was rendered in Microsoft Word and checked across its 33 pages, including 26 figures and 36 tables. The full audit scope is recorded in results/reproducibility.json.
+The Word manuscript was rendered in Microsoft Word and checked across its 34 pages, including 26 figures and 36 tables. The full audit scope is recorded in results/reproducibility.json.
 
 ## Method references
 
