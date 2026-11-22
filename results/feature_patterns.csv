@@ -1,0 +1,21 @@
+field,n_observed,missing_share,distinct_observed,pattern,zero_share_observed,positive_median,positive_p95,positive_p95_median,treatment,add_zero_flag,lower_cap,upper_cap,median,levels,knots,reference,rare_observed_share,encoded_columns_used,selected_by_rf
+annual_inc,33257,0.0,4532,Money,0.0,60000.0,141996.0,2.3666,Capped linear,False,12000.0,300000.0,60000.0,,,,,1,True
+dti,33257,0.0,2866,Percentage,0.00360826292209159,13.65,23.97,1.756043956043956,Capped linear,False,0.0,28.32,13.62,,8.42 | 18.8,,,3,False
+revol_util,33229,0.0008419280151547042,1080,Percentage,0.023774413915555688,51.5,93.70999999999985,1.819611650485434,Capped linear,False,0.0,99.18600000000006,50.4,,26.5 | 73.0,,,4,True
+emp_length,32179,0.03241422858345611,11,Ordered employment band,0.10522390378818484,5.0,10.0,2.0,Ordered years with endpoint indicators,False,0.0,10.0,5.0,,,,,4,False
+home_ownership,33257,0.0,4,Nominal category,,,,,One-hot with rare categories grouped,,,,,rent | mortgage | own,,rent,9.020657305228974e-05,3,False
+purpose,33257,0.0,14,Nominal category,,,,,One-hot with rare categories grouped,,,,,debt_consolidation | credit_card | other | home_improvement | major_purchase | small_business | car | wedding | medical | moving | vacation | house | educational,,debt_consolidation,0.0028264726223050786,13,True
+delinq_2yrs,33257,0.0,11,Count,0.8919325254833569,1.0,3.0,3.0,Capped signed log1p,True,0.0,5.0,0.0,,,,,2,False
+inq_last_6mths,33257,0.0,9,Count,0.49712842409116875,1.0,3.0,3.0,Capped signed log1p,True,0.0,5.0,1.0,,,,,2,True
+mths_since_last_delinq,11362,0.6583576389932947,94,Months since event,0.0,35.0,75.0,2.142857142857143,Capped linear,False,2.0,82.0,35.0,,,,,2,True
+mths_since_last_record,1780,0.946477433322308,105,Months since event,0.0,97.0,116.0,1.1958762886597938,Capped linear,False,18.79,119.0,97.0,,,,,2,False
+open_acc,33257,0.0,37,Count,0.0,9.0,17.0,1.8888888888888888,Capped linear,False,2.0,24.0,9.0,,,,,1,False
+pub_rec,33257,0.0,5,Count,0.946477433322308,1.0,1.0,1.0,Capped linear,True,0.0,2.0,0.0,,,,,2,False
+revol_bal,33257,0.0,19531,Money,0.024385843581802326,9201.5,41329.0,4.49155029071347,Capped signed log1p,False,0.0,102173.35000000046,8914.0,,,,,1,False
+total_acc,33257,0.0,80,Count,0.0,21.0,43.0,2.0476190476190474,Capped linear,False,4.0,61.0,21.0,,,,,1,False
+collections_12_mths_ex_med,33257,0.0,1,Count,1.0,,,,Any recorded positive value,False,,,,,,,,0,False
+acc_now_delinq,33257,0.0,1,Count,1.0,,,,Any recorded positive value,False,,,,,,,,0,False
+chargeoff_within_12_mths,33257,0.0,1,Count,1.0,,,,Any recorded positive value,False,,,,,,,,0,False
+delinq_amnt,33257,0.0,1,Money,1.0,,,,Any recorded positive value,False,,,,,,,,0,False
+pub_rec_bankruptcies,33257,0.0,3,Count,0.9564302252157441,1.0,1.0,1.0,Any recorded positive value,False,,,,,,,,1,False
+tax_liens,33257,0.0,1,Count,1.0,,,,Any recorded positive value,False,,,,,,,,0,False

@@ -1,0 +1,282 @@
+{
+  "dataset": "Lending Club Data",
+  "primary_model": "2014 term intercepts",
+  "target": {
+    "Fully Paid": 0,
+    "Charged Off": 1,
+    "Default": 1
+  },
+  "population": "Funded individual loans under standard policy; 36- or 60-month terms",
+  "scale": {
+    "reference_score": 600,
+    "reference_good_bad_odds": 20,
+    "points_to_double_odds": 20,
+    "factor": 28.85390081777927,
+    "origin": 513.5614381022527,
+    "base_points": 562.5423723392673
+  },
+  "model_intercept": -1.6975498233789386,
+  "coefficients": {
+    "annual_inc": -1.0860342562323613,
+    "dti": -0.4307031197162545,
+    "revol_util": -1.0383574834098206,
+    "purpose": -1.001043452295208,
+    "inq_last_6mths": -1.1524806308881486
+  },
+  "binning_rules": {
+    "annual_inc": {
+      "type": "numeric",
+      "cuts": [
+        45000.0,
+        52000.0,
+        68000.0,
+        78000.0,
+        90000.0
+      ],
+      "initial_cuts": [
+        31000.0,
+        40000.0,
+        45000.0,
+        52000.0,
+        60000.0,
+        68000.0,
+        78000.0,
+        90000.0,
+        115000.0
+      ],
+      "bad_rate_direction": "decreasing",
+      "interval": "left-closed, right-open",
+      "outlier_policy": "Retain the recorded upper tail in the open-ended final bin.",
+      "woe": {
+        "< 45,000": -0.20077806072221013,
+        "[45,000, 52,000)": -0.10050758676256516,
+        "[52,000, 68,000)": -0.04210729252677379,
+        "[68,000, 78,000)": 0.057278636008027364,
+        "[78,000, 90,000)": 0.12229060555772336,
+        ">= 90,000": 0.34057541642536016,
+        "[MISSING]": 0.0,
+        "[INVALID]": 0.0
+      },
+      "trained_bins": [
+        "< 45,000",
+        "[45,000, 52,000)",
+        "[52,000, 68,000)",
+        "[68,000, 78,000)",
+        "[78,000, 90,000)",
+        ">= 90,000"
+      ],
+      "untrained_policy": "Neutral WoE 0 plus a mandatory review flag; track the raw missing/unseen/invalid state.",
+      "smoothing_alpha": 0.0
+    },
+    "dti": {
+      "type": "numeric",
+      "cuts": [
+        8.67,
+        13.26,
+        17.44,
+        19.65,
+        24.89
+      ],
+      "initial_cuts": [
+        5.61,
+        8.67,
+        11.09,
+        13.26,
+        15.33,
+        17.44,
+        19.65,
+        22.03,
+        24.89
+      ],
+      "bad_rate_direction": "increasing",
+      "interval": "left-closed, right-open",
+      "outlier_policy": "Retain the recorded upper tail in the open-ended final bin.",
+      "woe": {
+        "< 8.67": 0.2527546850737025,
+        "[8.67, 13.26)": 0.1303199817473384,
+        "[13.26, 17.44)": 0.011170898313549282,
+        "[17.44, 19.65)": -0.10229080962529184,
+        "[19.65, 24.89)": -0.16619254257409208,
+        ">= 24.89": -0.25271412759125345,
+        "[MISSING]": 0.0,
+        "[INVALID]": 0.0
+      },
+      "trained_bins": [
+        "< 8.67",
+        "[8.67, 13.26)",
+        "[13.26, 17.44)",
+        "[17.44, 19.65)",
+        "[19.65, 24.89)",
+        ">= 24.89"
+      ],
+      "untrained_policy": "Neutral WoE 0 plus a mandatory review flag; track the raw missing/unseen/invalid state.",
+      "smoothing_alpha": 0.0
+    },
+    "revol_util": {
+      "type": "numeric",
+      "cuts": [
+        15.8,
+        29.74,
+        40.6,
+        64.9,
+        88.0
+      ],
+      "initial_cuts": [
+        15.8,
+        29.74,
+        40.6,
+        49.6,
+        57.6,
+        64.9,
+        72.3,
+        79.9,
+        88.0
+      ],
+      "bad_rate_direction": "increasing",
+      "interval": "left-closed, right-open",
+      "outlier_policy": "Retain the recorded upper tail in the open-ended final bin.",
+      "woe": {
+        "< 15.80": 0.5152673808265096,
+        "[15.80, 29.74)": 0.347572942854498,
+        "[29.74, 40.60)": 0.17472397681896315,
+        "[40.60, 64.90)": 0.02985799881481641,
+        "[64.90, 88.00)": -0.17850233562919082,
+        ">= 88.00": -0.3616090113977146,
+        "[MISSING]": -0.6841977838691725,
+        "[INVALID]": 0.0
+      },
+      "trained_bins": [
+        "< 15.80",
+        "[15.80, 29.74)",
+        "[29.74, 40.60)",
+        "[40.60, 64.90)",
+        "[64.90, 88.00)",
+        ">= 88.00",
+        "[MISSING]"
+      ],
+      "untrained_policy": "Neutral WoE 0 plus a mandatory review flag; track the raw missing/unseen/invalid state.",
+      "smoothing_alpha": 0.0
+    },
+    "purpose": {
+      "type": "category",
+      "mapping": {
+        "credit_card": "Credit card",
+        "debt_consolidation": "Debt consolidation",
+        "home_improvement": "Home improvement",
+        "car": "Car / purchase / wedding",
+        "major_purchase": "Car / purchase / wedding",
+        "wedding": "Car / purchase / wedding",
+        "small_business": "Small business",
+        "other": "Other stated purposes",
+        "medical": "Other stated purposes",
+        "vacation": "Other stated purposes",
+        "moving": "Other stated purposes",
+        "house": "Other stated purposes",
+        "educational": "Other stated purposes",
+        "renewable_energy": "Other stated purposes"
+      },
+      "order": [
+        "Car / purchase / wedding",
+        "Credit card",
+        "Home improvement",
+        "Debt consolidation",
+        "Other stated purposes",
+        "Small business"
+      ],
+      "rationale": "Keep major purposes and small business distinct; combine planned-purchase categories and pool remaining stated purposes.",
+      "woe": {
+        "Car / purchase / wedding": 0.4188715380159276,
+        "Credit card": 0.2795137137537698,
+        "Home improvement": 0.2737119960970243,
+        "Debt consolidation": -0.08358899199494423,
+        "Other stated purposes": -0.12285340008145902,
+        "Small business": -0.6604150105373767,
+        "[MISSING]": 0.0,
+        "[UNSEEN]": 0.0
+      },
+      "trained_bins": [
+        "Car / purchase / wedding",
+        "Credit card",
+        "Home improvement",
+        "Debt consolidation",
+        "Other stated purposes",
+        "Small business"
+      ],
+      "untrained_policy": "Neutral WoE 0 plus a mandatory review flag; track the raw missing/unseen/invalid state.",
+      "smoothing_alpha": 0.0
+    },
+    "inq_last_6mths": {
+      "type": "numeric",
+      "separate_zero": true,
+      "whole_number": true,
+      "cuts": [
+        2.0,
+        3.0,
+        6.0
+      ],
+      "initial_cuts": [
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        8.0
+      ],
+      "bad_rate_direction": "increasing",
+      "validity": "Finite, non-negative; counts and elapsed months are whole numbers.",
+      "zero_meaning": "Separate recorded zero",
+      "positive_support_deferred": false,
+      "woe": {
+        "0": 0.1918415300516641,
+        "(0, 2)": -0.07713723523604461,
+        "[2, 3)": -0.21069166191437522,
+        "[3, 6)": -0.35965022290220044,
+        ">= 6": -0.45998528536605754,
+        "[MISSING]": 0.0,
+        "[INVALID]": 0.0
+      },
+      "trained_bins": [
+        "0",
+        "(0, 2)",
+        "[2, 3)",
+        "[3, 6)",
+        ">= 6"
+      ],
+      "smoothing_alpha": 0.0,
+      "untrained_policy": "Neutral WoE 0 plus a review flag; preserve the missing/invalid state."
+    }
+  },
+  "calibration": {
+    "Original": {
+      "36": {
+        "offset": -0.2513090220346107,
+        "slope": 1.0
+      },
+      "60": {
+        "offset": 0.6061927300954212,
+        "slope": 1.0
+      }
+    },
+    "2014 term intercepts": {
+      "36": {
+        "offset": -0.1003225392259891,
+        "slope": 1.0
+      },
+      "60": {
+        "offset": 0.7264307786644537,
+        "slope": 1.0
+      }
+    },
+    "2014 intercepts plus fixed 60-month slope": {
+      "36": {
+        "offset": -0.1003225392259891,
+        "slope": 1.0
+      },
+      "60": {
+        "offset": 0.5660738239443821,
+        "slope": 0.906116655759964
+      }
+    }
+  }
+}

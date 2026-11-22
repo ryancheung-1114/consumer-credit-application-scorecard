@@ -1,0 +1,34 @@
+{
+  "checked_on": "2026-11-22",
+  "dataset": "Lending Club Data",
+  "core_stages_replayed": [
+    "logistic",
+    "term",
+    "slope",
+    "oot",
+    "recalibrate",
+    "final"
+  ],
+  "replay_basis": "Frozen local development samples and the verified source extract for later-cohort loading",
+  "scoring_interface": "CLI example and independent direct-logit reconciliation passed",
+  "executed_presentation_notebooks": 5,
+  "python_files_parsed": 26,
+  "paper_native_render": {
+    "application": "Microsoft Word",
+    "pages": 34,
+    "figures": 26,
+    "tables": 36
+  },
+  "paper_evidence_checks": "Section 6 compact alternatives match aggregate evidence; seven model rows share the same later population. Existing media and 35 unrelated tables were preserved.",
+  "published_data_grain": "Aggregates and synthetic scoring examples",
+  "source_setup": "Full source-preparation scripts available in the research runner",
+  "compact_woe_stages": {
+    "original_analysis_executed": true,
+    "baseline_comparisons_reproduced": 9,
+    "full_source_rerun_during_packaging": false
+  },
+  "presentation_code_cells_executed": 23,
+  "compact_aggregate_rows_reconciled": true,
+  "private_loan_tables_in_upload": false,
+  "primary_model_specification_unchanged": true
+}

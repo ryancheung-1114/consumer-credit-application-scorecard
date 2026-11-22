@@ -1,0 +1,8 @@
+model,input_representation,raw_fields,term_calibration_input,amount_capture_conditional,cohort,calibration,scenario,loans,bad,log_loss,auc,brier
+Five-variable WoE,5 WoE components,5,True,False,2015 Q1,2014 offsets,Recorded outcomes,84175,15978,0.4666066481587715,0.6449178828677163,0.1477161282038807
+Five-field engineered WoE,5 WoE components,5,True,False,2015 Q1,2014 offsets,Recorded outcomes,84175,15978,0.46645310813728313,0.6452054201695683,0.14766364077450603
+Selected business WoE,5 WoE components,6,True,False,2015 Q1,2014 offsets,Recorded outcomes,84175,15978,0.4668376897533681,0.6439942404493144,0.14780243689027894
+WoE with listed-amount ratio,5 WoE components,6,True,True,2015 Q1,2014 offsets,Recorded outcomes,84175,15978,0.46826523657476565,0.6421308357821571,0.14825458334865674
+Engineered main effects,"41 locked columns, 37 nonzero",14,True,False,2015 Q1,2014 offsets,Recorded outcomes,84175,15978,0.4634572852014426,0.6549053906553657,0.1468393334770688
+Pattern based full ridge,42 encoded columns,15,True,False,2015 Q1,2014 offsets,Recorded outcomes,84175,15978,0.4633394866663588,0.6556182267150317,0.1467772442075862
+Pattern based RF selection,22 encoded columns,5,True,False,2015 Q1,2014 offsets,Recorded outcomes,84175,15978,0.4680034691836837,0.6408660522343477,0.14812485383444005
